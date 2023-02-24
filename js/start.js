@@ -2,7 +2,7 @@ const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
 const result = document.querySelector("#result");
 
-const endPoint = 12;
+const endPoint = 20;
 const select = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 function calResult(){
@@ -42,6 +42,15 @@ function goResult(){
 }
 
 function addAnswer(answerText, qIdx, idx){
+  var questionImg = document.createElement('img');
+  const QimgDiv = document.querySelector('#questionImg');
+  var QimgURL = 'img/question_img-' + qIdx + '.png';
+  questionImg.src = QimgURL;
+  questionImg.alt = qIdx;
+  questionImg.classList.add('img-fluid');
+  questionImg.classList.add('fadeIn');
+  QimgDiv.appendChild(questionImg);
+
   var a = document.querySelector('.answerBox');
   var answer = document.createElement('button');
   answer.classList.add('answerList');
@@ -54,6 +63,8 @@ function addAnswer(answerText, qIdx, idx){
   answer.innerHTML = answerText;
 
   answer.addEventListener("click", function(){
+    /*QimgDiv.style.display = 'none';*/
+
     var children = document.querySelectorAll('.answerList');
     for(let i = 0; i < children.length; i++){
       children[i].disabled = true;
@@ -79,6 +90,7 @@ function goNext(qIdx){
     goResult();
     return;
   }
+
 
   var q = document.querySelector('.qBox');
   q.innerHTML = qnaList[qIdx].q;
