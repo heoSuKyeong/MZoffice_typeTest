@@ -3,11 +3,17 @@ const qna = document.querySelector("#qna");
 const result = document.querySelector("#result");
 
 const endPoint = 20;
-const select = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const select = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
+// 점수 계산
 function calResult(){
-  console.log(select);
-  var result = select.indexOf(Math.max(...select));
+  var result = 0;
+  for (let i = 0; i < select.length; i++) {
+    result += select[i]; 
+  }
+  
+  console.log("최종 답안 : " + select);
+  console.log("총 합 : " + result);
   return result;
 }
 
@@ -41,7 +47,8 @@ function goResult(){
     setResult();
 }
 
-function addAnswer(answerText, qIdx, idx){
+function addAnswer(answerText, qIdx, answerNumber){
+  //이미지 넣기
   var questionImg = document.createElement('img');
   const QimgDiv = document.querySelector('#questionImg');
   var QimgURL = 'img/question_img-' + qIdx + '.png';
@@ -51,6 +58,7 @@ function addAnswer(answerText, qIdx, idx){
   questionImg.classList.add('fadeIn');
   QimgDiv.appendChild(questionImg);
 
+  //질문지 넣기
   var a = document.querySelector('.answerBox');
   var answer = document.createElement('button');
   answer.classList.add('answerList');
@@ -62,21 +70,37 @@ function addAnswer(answerText, qIdx, idx){
   a.appendChild(answer);
   answer.innerHTML = answerText;
 
+  // 답안 선택시 이벤트
   answer.addEventListener("click", function(){
     /*QimgDiv.style.display = 'none';*/
 
     var children = document.querySelectorAll('.answerList');
+    
+    // 모든 선택지 초기화후 사라짐
     for(let i = 0; i < children.length; i++){
       children[i].disabled = true;
       children[i].style.WebkitAnimation = "fadeOut 0.5s";
       children[i].style.animation = "fadeOut 0.5s";
     }
+    
     setTimeout(() => {
-      var target = qnaList[qIdx].a[idx].type;
-      for(let i = 0; i < target.length; i++){
-        select[target[i]] += 1;
-      }
+      // 선택 점수 저장
+      switch (answerNumber) {
+        case 0:
+          select[qIdx] = 1;
+          break;
 
+        case 1:
+          select[qIdx] = 5;
+          break;
+      
+        default:
+          console.log(qIdx+1 + "번 문제 점수 선택 오류")
+          break;
+      }
+      console.log(select)
+
+      // 숨기기
       for(let i = 0; i < children.length; i++){
         children[i].style.display = 'none';
       }
@@ -91,12 +115,16 @@ function goNext(qIdx){
     return;
   }
 
-
+  // 질문 만들기
   var q = document.querySelector('.qBox');
   q.innerHTML = qnaList[qIdx].q;
-  for(let i in qnaList[qIdx].a){
+
+  // 기본 선택
+  for(let i = 0; i < qnaList[qIdx].a.length; i++){
     addAnswer(qnaList[qIdx].a[i].answer, qIdx, i);
   }
+
+  // 질문 상태 바 업데이트
   var status = document.querySelector('.statusBar');
   status.style.width = (100/endPoint) * (qIdx+1) + '%';
 }
