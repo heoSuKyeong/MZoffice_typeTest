@@ -10,7 +10,7 @@
   border-radius: 4px;
 
 
-  /* font-family: 'Do Hyeon', sans-serif; */
+  font-family: 'Do Hyeon', sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 25px;
@@ -80,4 +80,6 @@
 .btn-light{
   border-radius: 100%;
   margin: 12px;
+  background: #FFFFFF;
+  border: 1px solid #CECECE;
 }

@@ -49,15 +49,13 @@ function goResult(){
 
 function addAnswer(answerText, qIdx, answerNumber){
   //이미지 넣기
-  var questionImg = document.createElement('img');
-  const QimgDiv = document.querySelector('#questionImg');
+  var questionImg = document.querySelector('#qimg');
+  questionImg.classList.add('fadeIn');
+  
   var QimgURL = 'img/question_img-' + qIdx + '.png';
   questionImg.src = QimgURL;
   questionImg.alt = qIdx;
-  questionImg.classList.add('img-fluid');
-  questionImg.classList.add('fadeIn');
-  QimgDiv.appendChild(questionImg);
-
+  
   //질문지 넣기
   var a = document.querySelector('.answerBox');
   var answer = document.createElement('button');
