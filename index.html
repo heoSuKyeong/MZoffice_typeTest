@@ -7,7 +7,7 @@
   <meta name="author" content="JungGGukMa">
   <meta name="keywords" content="MZ테스트">
   <meta name="description" content="MZ테스트">
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <!-- sns share -->
   <meta property="og:url" content="https://twelvelovetype.netlify.app" />
   <meta property="og:title" content="MZ테스트" />
@@ -43,6 +43,10 @@
         <img src="./img/main.png" alt="mainImage" class="img-fluid">
       </div>
       <button type="button" class="btn btn-outline-danger my-5 py-1" onclick="js:begin()">확인하러 가기</button>
+      <ul class="mt-3">
+        <a href="javascript:mainClip()" class="link"><img src="../img/share_btn-link.png"></a>
+        <a href="javascript:mainKakao()"><img src="../img/share_btn-kakao.png"></a>
+      </ul>
     </section>
     <section id="qna">
       <div class="status mx-auto mt-5">
@@ -70,7 +74,11 @@
       <div class="resultDesc">
 
       </div>
-      <button type="button" class="kakao mt-3 py-2 px-3" onclick="js:setShare()">공유하기</button>
+      <!-- <button type="button" class="kakao mt-3 py-2 px-3" onclick="js:setShare()">공유하기</button> -->
+      <ul>
+        <a href="javascript:clip()" class="link"><img src="../img/share_btn-link.png"></a>
+        <a href="javascript:shareKakao()"><img src="../img/share_btn-kakao.png"></a>
+      </ul>
     </section>
     <script src="./js/data.js" charset="utf-8"></script>
     <script src="./js/start.js" charset="utf-8"></script>
