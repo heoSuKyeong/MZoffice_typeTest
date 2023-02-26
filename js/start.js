@@ -134,6 +134,8 @@ function goNext(qIdx){
 function begin(){
   main.style.WebkitAnimation = "fadeOut 1s";
   main.style.animation = "fadeOut 1s";
+  document.body.style.backgroundImage = "url()";
+  document.body.style.backgroundColor = "balck";
   setTimeout(() => {
     qna.style.WebkitAnimation = "fadeIn 1s";
     qna.style.animation = "fadeIn 1s";

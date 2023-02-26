@@ -1,5 +1,7 @@
 body{
-  background-color: black;
+  background-image: url(../img/MZ-bg.svg);
+  background-size: cover;
+  /* background-color: black; */
 }
 
 /* *{
