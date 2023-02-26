@@ -69,7 +69,7 @@ function setResult(){
 
   //MZ 레벨 이미지
   var mzLevelImg = document.createElement('img');
-  const mzLevelImgDiv = document.querySelector('#mzLevelImg');
+  const mzLevelImgDiv = document.querySelector('#mzLevel');
   var imgURL = 'img/result_img_mzlevel-' + point + '.png';
   mzLevelImg.src = imgURL;
   mzLevelImg.alt = point + '레벨';
