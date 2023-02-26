@@ -15,24 +15,39 @@ function calResult(){
   console.log("최종 답안 : " + select);
   console.log("총 합 : " + result);
 
-  return result;
+  if(result >= 20 && result <=36){
+    return 1;
+  }
+  else if(result >= 37 && result <=52){
+    return 2;
+  }
+  else if(result >= 53 && result <=68){
+    return 3;
+  }
+  else if(result >= 69 && result <=84){
+    return 4;
+  }
+  else if(result >= 85 && result <=100){
+    return 5;
+  }
+
 }
 
 function setResult(){
   let point = calResult();
   const resultName = document.querySelector('.resultname');
-  resultName.innerHTML = infoList[point].name;
+  resultName.innerHTML = infoList[5-point].name;
 
   var resultImg = document.createElement('img');
   const imgDiv = document.querySelector('#resultImg');
-  var imgURL = 'img/result_image-' + point + '.png';
+  var imgURL = 'img/result_img-' + point + '.png';
   resultImg.src = imgURL;
   resultImg.alt = point;
   resultImg.classList.add('img-fluid');
   imgDiv.appendChild(resultImg);
 
   const resultDesc = document.querySelector('.resultDesc');
-  resultDesc.innerHTML = infoList[point].desc;
+  resultDesc.innerHTML = infoList[5-point].desc;
 }
 
 function goResult(){
