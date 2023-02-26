@@ -28,8 +28,8 @@
   /* margin-bottom: 90px; */
 }
 
-#mz{
-  font-size: 139.14px;
+#mz{  text-shadow: -8px 0 black, 0 1px black, 1px 0 black, 0 -1px black;;
+  font-size: 139.14px; -webkit-text-stroke: 3px black;
   /* line-height: 185px; */
   /* identical to box height */
   color: #D51F24;
@@ -37,11 +37,13 @@
   /* border: 13.8173px solid #230800; */
   /* -webkit-text-stroke: 6px #230800; */
   /* text-shadow: -10px 0 #230800, 0 10px #230800, 10px 0 #230800, 0 -10px #230800; */
+  
 }
 
-#test{
+#test{  text-shadow: -8px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;;
+  font-size: 139.14px; -webkit-text-stroke: 3px #ffffff;
   font-size: 86.4288px;
-  /* line-height: 115px; */
+   line-height: 120px; 
   /* identical to box height */
   color: #0E4756;
 }
@@ -66,7 +68,7 @@
 }
 
 .font01{
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
