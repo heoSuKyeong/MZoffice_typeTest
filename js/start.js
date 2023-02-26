@@ -6,6 +6,21 @@ const endPoint = 20;
 const select = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 var currQidx = 0;
 
+function goHome() {
+  qna.style.WebkitAnimation = "fadeOut 1s";
+  qna.style.animation = "fadeOut 1s";
+  document.body.style.backgroundImage = "url(../img/MZ-bg.svg);";
+  // document.body.style.backgroundColor = "balck";
+  setTimeout(() => {
+    main.style.WebkitAnimation = "fadeIn 1s";
+    main.style.animation = "fadeIn 1s";
+    setTimeout(() => {
+      qna.style.display = "none";
+      main.style.display = "block"
+    }, 450)
+  }, 450);
+}
+
 // 점수 계산
 function calResult(){
   var result = 0;
@@ -137,7 +152,7 @@ function addAnswer(answerText, qIdx, answerNumber){
 
 function goBack() {
   if(currQidx === 0){
-    // goResult();
+    goHome();
     return;
   }
   currQidx--;
