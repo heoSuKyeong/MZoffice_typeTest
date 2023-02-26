@@ -15,6 +15,7 @@ body{
 }
 
 .qBox {
+  font-family: 'Do Hyeon', sans-serif;
   text-align: center;
   color: white;
   font-size: 24px;
@@ -22,21 +23,23 @@ body{
 }
 
 .answerList {
-  background-color: whitesmoke;
-  border-radius: 5px;
+  background-color: #ffffff;
+  border-radius: 50px;
   display: block;
   width: 80%;
-  border: 0px;
-  font-size: 20px;
+  border: 1px solid #DADADA;
+
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: normal;
+  font-size: 14px;  
 }
 
 .answerList:hover, .answerList:focus {
   background:#a4b0be; 
-  color:black; 
-  border:0px solid red; 
-  border-width: 1px; 
-  margin:-3px; 
-  border-radius:5px; 
+  /* color:black;  */
+  /* border:0px solid red; 
+  border-width: 1px;  */
+  /* margin:-3px;  */
   transition: 0.7s;
   
 }
