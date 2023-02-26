@@ -4,6 +4,7 @@ const result = document.querySelector("#result");
 
 const endPoint = 20;
 const select = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+var currQidx = 0;
 
 // 점수 계산
 function calResult(){
@@ -124,11 +125,47 @@ function addAnswer(answerText, qIdx, answerNumber){
   }, false);
 }
 
+function goBack() {
+  if(currQidx === 0){
+    // goResult();
+    return;
+  }
+  currQidx--;
+  //기존 선택지 지우기
+  var children = document.querySelectorAll('.answerList');
+  for(let i = 0; i < children.length; i++){
+    children[i].disabled = true;
+    children[i].style.display = 'none';
+  }
+
+
+  //뒤로간 페이지 다시 만들기
+  //상단 페이지 번호
+  var p = document.querySelector('.page');
+  p.innerHTML = currQidx+1 + "/" + endPoint;
+
+
+  // 질문 만들기
+  var q = document.querySelector('.qBox');
+  q.innerHTML = qnaList[currQidx].q;
+
+  // 기본 선택
+  for(let i = 0; i < qnaList[currQidx].a.length; i++){
+    addAnswer(qnaList[currQidx].a[i].answer, currQidx, i);
+  }
+
+  // 질문 상태 바 업데이트
+  var status = document.querySelector('.statusBar');
+  status.style.width = (100/endPoint) * (currQidx+1) + '%';
+  
+}
+
 function goNext(qIdx){
   if(qIdx === endPoint){
     goResult();
     return;
   }
+  currQidx++;
   var p = document.querySelector('.page');
   p.innerHTML = qIdx+1 + "/" + endPoint;
 
