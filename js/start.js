@@ -165,7 +165,7 @@ function goNext(qIdx){
     goResult();
     return;
   }
-  currQidx++;
+  currQidx = qIdx;
   var p = document.querySelector('.page');
   p.innerHTML = qIdx+1 + "/" + endPoint;
 
