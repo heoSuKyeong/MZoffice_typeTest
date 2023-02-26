@@ -95,23 +95,53 @@
     </section>
 
     <section id="result" class="mx-auto my-5 py-5 px-3">
-      <div id="subHeader_result" class="col-lg-3 col-md-8 col-sm-8 col-6 mx-auto">
-        <h2>당신의 MZ력은?</h2>
+      <div id="resultTop" class="mx-auto">
+        <div id="subHeader_result" class="col-lg-3 col-md-8 col-sm-8 col-6 mx-auto">
+          <h2>당신의 MZ력은?</h2>
+        </div>
+        <div class="resultname">
+  
+        </div>
+        <div id="resultImg" class="my-3 col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+  
+        </div>
+        <div class="resultDesc">
+  
+        </div>
       </div>
-      <div class="resultname">
+
+      <div id="mzLevel">
+        <div id="levelContent" class="mx-auto">
+          <p class="font03">MZ력 Level</p>
+        </div>
+      </div>
+
+      <div id="share">
+        <p class="font02">테스트 공유하기</p>
+
+        <button type="button" class="btn btn-light" onclick="javascript:shareKakao()">
+          <i class="bi bi-chat-fill"></i>
+        </button>
+
+        <button type="button" class="btn btn-light">
+          <i class="bi bi-instagram"></i>
+        </button>
+
+        <button type="button" class="btn btn-light" onclick="javascript:clip()">
+          <i class="bi bi-link-45deg"></i>
+        </button>
 
       </div>
-      <div id="resultImg" class="my-3 col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+
+      <div id="resultbottom">
 
       </div>
-      <div class="resultDesc">
 
-      </div>
       <!-- <button type="button" class="kakao mt-3 py-2 px-3" onclick="js:setShare()">공유하기</button> -->
-      <ul>
+      <!-- <ul>
         <a href="javascript:clip()" class="link"><img src="./img/share_btn-link.png"></a>
         <a href="javascript:shareKakao()"><img src="./img/share_btn-kakao.png"></a>
-      </ul>
+      </ul> -->
     </section>
     <script src="./js/data.js" charset="utf-8"></script>
     <script src="./js/start.js" charset="utf-8"></script>
