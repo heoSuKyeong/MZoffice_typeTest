@@ -1,4 +1,4 @@
-const url = 'https://twelvelovetype.netlify.app/';
+const url = 'https://mzoffice-typetest.netlify.app';
 //카카오 테스트 링크 공유
 function mainKakao() {
   const shareTitle = 'MZ테스트';
