@@ -40,16 +40,26 @@ function setResult(){
   const resultName = document.querySelector('.resultname');
   resultName.innerHTML = infoList[5-point].name;
 
+  //캐릭터 이미지
   var resultImg = document.createElement('img');
   const imgDiv = document.querySelector('#resultImg');
   var imgURL = 'img/result_img-' + point + '.png';
   resultImg.src = imgURL;
-  resultImg.alt = point;
+  resultImg.alt = point + '캐릭터';
   resultImg.classList.add('img-fluid');
   imgDiv.appendChild(resultImg);
 
   const resultDesc = document.querySelector('.resultDesc');
   resultDesc.innerHTML = infoList[5-point].desc;
+
+  //MZ 레벨 이미지
+  var mzLevelImg = document.createElement('img');
+  const mzLevelImgDiv = document.querySelector('#mzLevelImg');
+  var imgURL = 'img/result_img_mzlevel-' + point + '.png';
+  mzLevelImg.src = imgURL;
+  mzLevelImg.alt = point + '레벨';
+  mzLevelImg.classList.add('img-fluid');
+  mzLevelImgDiv.appendChild(mzLevelImg);
 }
 
 function goResult(){
