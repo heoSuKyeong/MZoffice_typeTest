@@ -24,7 +24,7 @@ function calResult(){
   else if(result >= 53 && result <=68){
     return 3;
   }
-  else if(result >= 69 && result <84){
+  else if(result >= 69 && result <=84){
     return 4;
   }
   else if(result >= 85 && result <=100){
