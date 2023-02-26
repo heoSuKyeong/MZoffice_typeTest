@@ -69,11 +69,12 @@ function setResult(){
 
   //MZ 레벨 이미지
   var mzLevelImg = document.createElement('img');
-  const mzLevelImgDiv = document.querySelector('#mzLevel');
+  const mzLevelImgDiv = document.querySelector('#levelImg');
   var imgURL = 'img/result_img_mzlevel-' + point + '.png';
   mzLevelImg.src = imgURL;
   mzLevelImg.alt = point + '레벨';
   mzLevelImg.classList.add('img-fluid');
+  mzLevelImg.classList.add('mx-auto');
   mzLevelImgDiv.appendChild(mzLevelImg);
 }
 
