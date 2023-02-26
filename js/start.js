@@ -34,6 +34,7 @@ function calResult(){
 }
 
 function setResult(){
+  document.body.style.backgroundColor = "white";
   let point = calResult();
   const resultName = document.querySelector('.resultname');
   resultName.innerHTML = infoList[5-point].name;
